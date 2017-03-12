@@ -10,7 +10,7 @@ services:
       - "5432:5432"
   web:
     build: .
-    command: mix ecto.migrate && mix phoenix.server
+    command: mix phoenix.server
     volumes:
       - .:/app
     ports:

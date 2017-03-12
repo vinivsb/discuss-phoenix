@@ -16,9 +16,9 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y -q nodejs
 
 ADD . /app
-WORKDIR /app/discuss
+WORKDIR /app
+
+RUN mix local.hex --force
 
 RUN npm install
 RUN mix deps.get
-
-RUN mix local.hex --force
